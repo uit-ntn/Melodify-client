@@ -1,0 +1,198 @@
+.leftMenu {
+  flex: 1;
+  height: 100%;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  min-width: 300px;
+}
+
+.logoAndSearch,
+.MenuContainer,
+.playlistContainer {
+  background-color: rgba(34, 34, 34, 0.6);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  padding: 20px 25px;
+  border-radius: 10px;
+}
+
+.leftMenu .logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftMenu .logoContainer i {
+  font-size: 30px;
+  transform: translateY(4px);
+  cursor: pointer;
+}
+
+.leftMenu .logoContainer i:nth-of-type(2) {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.leftMenu .logoContainer h2 {
+  font-size: 20px;
+}
+
+.searchBox {
+  width: 100%;
+  height: 45px;
+  position: relative;
+  margin-top: 20px;
+  color: #848484;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
+
+.searchBox input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-left: 45px;
+  color: #f1f1f1;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.searchBox .searchIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  font-size: 20px;
+}
+
+/* Menu Container */
+
+.MenuContainer {
+  margin: 10px 0;
+}
+
+.MenuContainer .title {
+  color: #848484;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.MenuContainer ul {
+  width: 100%;
+  padding: 0;
+}
+
+.MenuContainer li {
+  list-style: none;
+  margin: 5px 0;
+  width: 60%;
+  padding: 5px 0;
+  position: relative;
+}
+
+.MenuContainer li a {
+  text-decoration: none;
+  color: #848484;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.MenuContainer li:hover a {
+  color: #fff;
+}
+
+.MenuContainer li.active a {
+  color: #fff;
+}
+
+.MenuContainer li a i {
+  font-size: 20px;
+  margin-right: 15px;
+  transform: translateY(2px);
+}
+
+/* Playlist */
+
+.playlistContainer {
+  padding: 0;
+}
+
+.playlistContainer .nameContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #848484;
+  margin-bottom: 10px;
+  padding: 15px 25px 0 25px;
+}
+
+.playlistContainer .nameContainer p {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.addPlaylist-img {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 6px;
+  position: relative;
+}
+
+.addPlaylist-img:hover {
+  color: #fff;
+  background-color: #242424;
+}
+
+.playlistContainer .playlistScroll {
+  max-height: 200px;
+  padding: 0 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+}
+
+.playlistContainer .playlistScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.playlistContainer .playlistItem {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px 0;
+  cursor: pointer;
+  color: #848484;
+}
+
+.playlistContainer .playlistImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.playlistContainer .playlistName {
+  color: #fff;
+}
+
+.playlistContainer .playlistItem:hover {
+  background-color: #242424;
+  border-radius: 4px;
+}
+
+.playlistContainer .playlistItem.active {
+  background-color: #242424;
+  border-radius: 4px;
+}
