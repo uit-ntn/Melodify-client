@@ -3,6 +3,7 @@ import "./App.css";
 import { LeftMenu } from "./Components/LeftMenu";
 import { MainContainer } from "./Components/MainContainer";
 import { RightMenu } from "./Components/RightMenu";
+import "tailwindcss/tailwind.css";
 
 function App() {
   return (
