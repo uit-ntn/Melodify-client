@@ -1,6 +1,4 @@
 import React from "react";
-import "../Styles/LeftMenu.css";
-
 import { FaSpotify, FaEllipsisH } from "react-icons/fa";
 import { BsSearch } from "react-icons/bs";
 import { Menu } from "./Menu";
@@ -14,7 +12,7 @@ function LeftMenu() {
       <div className="bg-[rgba(34,34,34,0.6)] backdrop-blur-[10px] w-full p-[20px_25px] rounded-[10px] mb-2">
         <div className="flex items-center justify-between">
           <i className="text-3xl cursor-pointer">
-            <FaSpotify />
+            <img className={require("../img/logo.jpg")}></img>
           </i>
           <h2 className="text-lg font-bold">Melodify</h2>
           <i className="text-lg cursor-pointer">
