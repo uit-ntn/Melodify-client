@@ -1,6 +1,6 @@
 import React from "react";
-import { FaSpotify, FaEllipsisH } from "react-icons/fa";
-import { BsSearch } from "react-icons/bs";
+import { FaEllipsisH } from "react-icons/fa";
+import SearchBar from "./Header/HeaderSearchBar";
 import { Menu } from "./Menu";
 import { MenuList } from "./MenuList";
 import { MenuPlaylist } from "./MenuPlaylist";
@@ -12,7 +12,7 @@ function LeftMenu() {
       <div className="bg-[rgba(34,34,34,0.6)] backdrop-blur-[10px] w-full p-[20px_25px] rounded-[10px] mb-2">
         <div className="flex items-center justify-between">
           <i className="text-3xl cursor-pointer">
-            <img className={require("../img/logo.jpg")}></img>
+            <img className="" src={require("../img/logo.jpg")}></img>
           </i>
           <h2 className="text-lg font-bold">Melodify</h2>
           <i className="text-lg cursor-pointer">
@@ -26,9 +26,9 @@ function LeftMenu() {
             className="w-full h-full outline-none border-none bg-black bg-opacity-50 pl-12 text-white text-lg font-bold"
             style={{ fontSize: "14px" }}
           />
-          <i className="absolute top-0 left-0 w-12 h-12 flex items-center justify-center text-lg">
-            <BsSearch />
-          </i>
+
+          <SearchBar></SearchBar>
+
         </div>
       </div>
 
