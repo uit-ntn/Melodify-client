@@ -29,7 +29,7 @@ function Menu({ title, menuObject }) {
               className="list-none m-[5px_0] w-3/5 p-[5px_0] relative"
             >
               <a
-                href="#"
+                href=""
                 className="no-underline text-[#848484] flex items-center text-base hover:text-white"
               >
                 <i className="text-lg mr-4 translate-y-[2px]">{menu.icon}</i>
