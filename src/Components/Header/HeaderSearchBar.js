@@ -47,7 +47,7 @@ const SearchBar = function () {
                     placeholder="Search"
                     onChange={handleChange}
                     value={inputValue}
-                    onClick={routeChange}
+                    // onClick={routeChange}
                     onFocus={() => {
                         setFocus(true);
                     }}
