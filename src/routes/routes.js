@@ -1,10 +1,7 @@
 import { MainContainer } from "../Components/MainContainer";
-import { MenuPlaylist } from "../Components/MenuPlaylist";
-
 
 const publicRoutes = [
     { path: "/", element: MainContainer },
-    { path: "/", element: MenuPlaylist },
     { path: "/signin", element: "" },
     { path: "/signup", element: "" },
     { path: "/search", element: "" },

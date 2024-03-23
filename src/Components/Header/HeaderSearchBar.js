@@ -18,7 +18,7 @@ const SearchBar = function () {
         if (inputValue) {
             timer = setTimeout(() => {
                 let path = `/search/${inputValue}`;
-                navigate(path);
+                // navigate(path);
             }, 500); // Chờ 1 giây sau khi người dùng ngưng nhập liệu
         }
         return () => {
