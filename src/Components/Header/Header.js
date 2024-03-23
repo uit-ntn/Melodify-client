@@ -78,6 +78,7 @@ export function LoggedHeader({ bgColor, showHello }) {
     return (
         <>
             <div style={{ background: `${bgColor}` }} className="flex justify-between items-center bg-[#131313] h-16 mx-auto">
+
                 <div className="flex gap-2 ml-4">
                     <button
                         onClick={() => { navigate(-1) }}
@@ -93,7 +94,9 @@ export function LoggedHeader({ bgColor, showHello }) {
                         <AiOutlineRight className='text-xl font-semibold' />
                     </button>
                 </div>
-
+                <div className=''>
+                    Melodify
+                </div>
                 <div className="flex gap-4 mr-4 justify-center items-center">
                     {(logged) ? (accType === 1 || accType === 2) ?
                         <div
