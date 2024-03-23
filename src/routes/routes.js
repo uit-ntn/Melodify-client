@@ -1,9 +1,11 @@
 import { MainContainer } from "../Components/MainContainer";
+import SignIn from "../Components/Login-SignUp/SignIn";
+import SignUp from "../Components/Login-SignUp/SignUp";
 
 const publicRoutes = [
     { path: "/", element: MainContainer },
-    { path: "/signin", element: "" },
-    { path: "/signup", element: "" },
+    { path: "/signin", element: SignIn },
+    { path: "/signup", element: SignUp },
     { path: "/search", element: "" },
     { path: "/search/:searching", element: "" },
     { path: "/catelogy/:catelogyID", element: "" },
@@ -34,4 +36,4 @@ const adminRoutes = [
 ]
 
 
-export {adminRoutes, publicRoutes,privateRoutes};
+export { adminRoutes, publicRoutes, privateRoutes };
