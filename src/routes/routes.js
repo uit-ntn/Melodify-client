@@ -1,15 +1,10 @@
-import { LeftMenu } from "../Components/LeftMenu";
 import { MainContainer } from "../Components/MainContainer";
-import { RightMenu } from "../Components/RightMenu";
-
-
+import { MenuPlaylist } from "../Components/MenuPlaylist";
 
 
 const publicRoutes = [
-    { path: "/", element: LeftMenu },
     { path: "/", element: MainContainer },
-    { path: "/", element: RightMenu },
-    { path: "/", element: "" },
+    { path: "/", element: MenuPlaylist },
     { path: "/signin", element: "" },
     { path: "/signup", element: "" },
     { path: "/search", element: "" },
