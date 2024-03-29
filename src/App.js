@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useContext } from "react";
 import { LoggedContext } from "./Components/Login-SignUp/LoggedContext";
 import { publicRoutes, privateRoutes, adminRoutes } from "./routes/routes";
@@ -19,13 +19,13 @@ function App() {
   const accType = 0;
 
 
-  const user = localStorage.getItem('user');
-  // Set data nếu người dùng đã đăng nhập
-  if (user != null) {
-    const userJson = JSON.parse(user);
-    userID = userJson.user_id;
-    accType = userJson.accountTypeID;
-  }
+  // const user = localStorage.getItem('user');
+  // // Set data nếu người dùng đã đăng nhập
+  // if (user != null) {
+  //   const userJson = JSON.parse(user);
+  //   userID = userJson.user_id;
+  //   accType = userJson.accountTypeID;
+  // }
   return (
     <Router>
       <div className="relative flex">
@@ -37,7 +37,7 @@ function App() {
         <div className="flex-1 flex flex-col bg-black">
           <div className="flex-1 pb-40">
             {
-              (userID == 0) ?
+              (userID === 0) ?
                 <Routes>
                   {publicRoutes.map((route, index) => {
                     const Element = route.element;
@@ -51,7 +51,7 @@ function App() {
                   })}
                 </Routes>
                 :
-                (accType == 3) ?
+                (accType === 3) ?
                   <Routes>
                     {privateRoutes.map((route, index) => {
                       const Element = route.element;
@@ -65,7 +65,7 @@ function App() {
                     })}
                   </Routes>
                   :
-                  (accType == 4) ?
+                  (accType === 4) ?
                     <Routes>
                       {adminRoutes.map((route, index) => {
                         const Element = route.element;
