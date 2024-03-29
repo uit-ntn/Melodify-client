@@ -126,12 +126,12 @@ export function LoggedHeader({ bgColor, showHello }) {
                         <div className="flex flex-row-reverse items-start align-middle bg-transparent h-16">
                             <div className="flex items-center h-full gap-2">
                                 <button className='rounded-full text-gray-400 text-lg font-medium py-2 px-12 hover:text-white hover:font-bold bg-black'
-                                // onClick={() => { navigate('/signup'); }}
+                                onClick={() => { navigate('/signup'); }}
                                 >
                                     Sign up
                                 </button>
                                 <button className='rounded-full bg-white text-stone-950 text-lg font-medium py-2 px-12 hover:font-bold'
-                                // onClick={() => { navigate('/signin'); }}
+                                onClick={() => { navigate('/signin'); }}
                                 >
                                     Log in
                                 </button>

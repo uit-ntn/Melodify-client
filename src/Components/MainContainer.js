@@ -11,4 +11,4 @@ function MainContainer() {
   )
 }
 
-export { MainContainer };
+export default MainContainer ;

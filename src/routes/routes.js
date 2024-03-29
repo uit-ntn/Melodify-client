@@ -1,6 +1,7 @@
-import { MainContainer } from "../Components/MainContainer";
+import MainContainer  from "../Components/MainContainer";
 import SignIn from "../Components/Login-SignUp/SignIn";
 import SignUp from "../Components/Login-SignUp/SignUp";
+
 
 const publicRoutes = [
     { path: "/", element: MainContainer },
@@ -18,8 +19,8 @@ const publicRoutes = [
     {}
 ]
 const privateRoutes = [
-    { path: "/", element: "" },
-    { path: "/", element: "" },
+    { path: "/orders", element: "" },
+    { path: "/report", element: "" },
     { path: "/", element: "" },
     { path: "/", element: "" },
     { path: "/", element: "" },
