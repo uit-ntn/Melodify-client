@@ -15,17 +15,17 @@ function App() {
 
 
   // dành cho người dùng chưa signin
-  const userID = 0;
-  const accType = 0;
+  let userID = 0;
+  let accType = 0;
 
 
-  // const user = localStorage.getItem('user');
-  // // Set data nếu người dùng đã đăng nhập
-  // if (user != null) {
-  //   const userJson = JSON.parse(user);
-  //   userID = userJson.user_id;
-  //   accType = userJson.accountTypeID;
-  // }
+  const user = localStorage.getItem('user');
+  // Set data nếu người dùng đã đăng nhập
+  if (user != null) {
+    const userJson = JSON.parse(user);
+    userID = userJson.user_id;
+    accType = userJson.accountTypeID;
+  }
   return (
     <Router>
       <div className="relative flex">
