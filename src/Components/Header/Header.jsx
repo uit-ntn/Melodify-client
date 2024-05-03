@@ -1,16 +1,19 @@
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import axios from 'axios';
+import { useState, useEffect, useContext } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
+import axios from 'axios'
+
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 import { IoIosNotifications } from 'react-icons/io'
 import { MdNotificationsActive } from 'react-icons/md'
 import { FaBagShopping } from "react-icons/fa6";
-import SearchBar from './HeaderSearchBar'
-// import Notification from './Notification/Notification'
-// import DropdownMenu from './Notification/DropdownMenu'
-import avatar from '../../img/background.jpg'
-import { Spotify } from '../../API/Credentials'
 
+import SearchBar from './HeaderSearchBar'
+import Notification from './Notification/Notification'
+import DropdownMenu from './Notification/DropdownMenu'
+
+import avatar from '../../assets/avatar.png'
+import { Spotify } from '../../API/Credentials'
+import { LoggedContext } from '../Login-SignUp/LoggedContext'
 
 export default function Headers({ bgColor }) {
     return (
@@ -78,30 +81,22 @@ export function LoggedHeader({ bgColor, showHello }) {
     return (
         <>
             <div style={{ background: `${bgColor}` }} className="flex justify-between items-center bg-[#131313] h-16 mx-auto">
-
                 <div className="flex gap-2 ml-4">
-                    <button
-                        onClick={() => { navigate(-1) }}
-                        className={`text-[#EE5566] bg-black rounded-full h-10 w-10 flex justify-center items-center hover:text-lg active:bg-[#EE5566] active:text-white`}>
+                    <button onClick={() => { navigate(-1) }} className={`text-[#EE5566] bg-black rounded-full h-10 w-10 flex justify-center items-center hover:text-lg active:bg-[#EE5566] active:text-white`}>
                         <AiOutlineLeft className='text-xl font-semibold' />
                     </button>
                     {showHello && (
                         <p className="text-white">Hello</p>
                     )}
 
-                    <button
-                        onClick={() => { navigate(1) }} className="text-[#EE5566] bg-black rounded-full h-10 w-10 flex justify-center items-center hover:text-lg active:bg-[#EE5566] active:text-white">
+                    <button onClick={() => { navigate(1) }} className="text-[#EE5566] bg-black rounded-full h-10 w-10 flex justify-center items-center hover:text-lg active:bg-[#EE5566] active:text-white">
                         <AiOutlineRight className='text-xl font-semibold' />
                     </button>
                 </div>
-                <div className=''>
-                    Melodify
-                </div>
+
                 <div className="flex gap-4 mr-4 justify-center items-center">
-                    {(logged) ? (accType === 1 || accType === 2) ?
-                        <div
-                            // onClick={() => navigate('/albums')}
-                            class="w-36 h-10 bg-[#EE5566] rounded-xl flex items-center justify-center gap-2 text-white font-bold cursor-pointer select-none hover:bg-[#ed4559]">
+                    {(logged) ? (accType===1 || accType===2) ?
+                        <div onClick={()=>navigate('/albums')} class="w-36 h-10 bg-[#EE5566] rounded-xl flex items-center justify-center gap-2 text-white font-bold cursor-pointer select-none hover:bg-[#ed4559]">
                             <FaBagShopping />
                             <div class="">Explore Store</div>
                         </div>
@@ -113,26 +108,20 @@ export function LoggedHeader({ bgColor, showHello }) {
                     <SearchBar />
                     {logged ?
                         <div className="flex flex-row-reverse items-center bg-transparent h-16 gap-2">
-                            <button
-                                onClick={HandleClickDropdown}>
+                            <button onClick={HandleClickDropdown}>
                                 <img src={avatar} className='rounded-full w-10 h-10' alt="Museverse"></img>
                             </button>
-                            <button
-                                onClick={HandleClickNotification} className="bg-black bg-opacity-80 text-[#EE5566] rounded-lg w-10 h-10 flex justify-center items-center hover:bg-[#323232]">
+                            <button onClick={HandleClickNotification} className="bg-black bg-opacity-80 text-[#EE5566] rounded-lg w-10 h-10 flex justify-center items-center hover:bg-[#323232]">
                                 {notification ? <MdNotificationsActive className="text-xl" /> : <IoIosNotifications className="text-xl" />}
                             </button>
                         </div>
                         :
                         <div className="flex flex-row-reverse items-start align-middle bg-transparent h-16">
                             <div className="flex items-center h-full gap-2">
-                                <button className='rounded-full text-gray-400 text-lg font-medium py-2 px-12 hover:text-white hover:font-bold bg-black'
-                                onClick={() => { navigate('/signup'); }}
-                                >
+                                <button className='rounded-full text-gray-400 text-lg font-medium py-2 px-12 hover:text-white hover:font-bold bg-black' onClick={() => { navigate('/signup'); }}>
                                     Sign up
                                 </button>
-                                <button className='rounded-full bg-white text-stone-950 text-lg font-medium py-2 px-12 hover:font-bold'
-                                onClick={() => { navigate('/signin'); }}
-                                >
+                                <button className='rounded-full bg-white text-stone-950 text-lg font-medium py-2 px-12 hover:font-bold' onClick={() => { navigate('/signin'); }}>
                                     Log in
                                 </button>
                             </div>
@@ -141,8 +130,8 @@ export function LoggedHeader({ bgColor, showHello }) {
                 </div>
 
             </div>
-            {/* {notification ? <Notification notification={notification} data={data} /> : ""}
-            {dropdownMenu ? <DropdownMenu /> : ""} */}
+            {notification ? <Notification notification={notification} data={data} /> : ""}
+            {dropdownMenu ? <DropdownMenu /> : ""}
         </>
     )
 }
