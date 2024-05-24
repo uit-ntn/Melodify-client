@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react'
-import bgImage from '../../img/background.jpg'
-import logo_txt from '../../img/logo.jpg'
+import bgImage from '../../assets/bg-image.png'
+import logo_txt from '../../assets/logo_txt.png'
 import UsePasswordToggle from './UsePasswordToggle';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { LoggedContext } from './LoggedContext';
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2'
 import axiosInstance from '../../API/axios';
 import { AxiosError } from 'axios';
 

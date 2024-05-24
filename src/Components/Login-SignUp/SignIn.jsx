@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import bgImage from '../../img/background.jpg';
-import logo from '../../img/logo.jpg'
+import bgImage from '../../assets/bg-image.png'
+import logo_txt from '../../assets/logo_txt.png'
 import UsePasswordToggle from './UsePasswordToggle';
 import { FcGoogle } from "react-icons/fc"
 import { FaFacebook } from "react-icons/fa6";
@@ -106,16 +106,16 @@ const SignIn = () => {
 
     return (
         <div className="w-full h-screen flex items-start">
-            <div className='relative w-[40%] h-full flex flex-col'>
+            <div className='relative w-[30%] h-full flex flex-col'>
                 <div className='absolute top-[25%] left-[15%] flex flex-col'>
-                    <img src={logo} alt='' />
+                    <img src={logo_txt} alt='' />
                 </div>
                 <img className='h-full object-cover' src={bgImage} alt='' />
             </div>
 
             <div className='flex flex-col p-10 w-[60%] h-full bg-[#1F1F22] items-center font-mont justify-center'>
                 <form onSubmit={handleSubmit} className='flex flex-col items-center'>
-                    <h1 className='text-[#EE5566] text-5xl font-bold mb-20'>Log in to Melodify</h1>
+                    <h1 className='text-[#FFFFFF] text-5xl font-bold mb-20'>Log in to Melodify</h1>
                     <div className='w-[300px] h-[35px] relative mb-2 text-lg text-white mb-5'>
                         <input
                             type='button'
@@ -132,7 +132,7 @@ const SignIn = () => {
                             type='button'
                             onClick={() => login()}
                             value='Sign in with Google'
-                            className='w-full h-full rounded-lg bg-black'
+                            className='w-full h-full rounded-lg bg-white'
                         />
                         <span className='absolute top-[20%] left-[10%] text-2xl'>
                             <FcGoogle />
@@ -168,7 +168,7 @@ const SignIn = () => {
                         <div className='text-red-600'>
                             {errors.password && <span>{errors.password}</span>}
                         </div>
-                        <div class="w-[400px] p-0 text-center text-white text-xl font-semibold bg-[#EE5566] rounded-lg mb-1">
+                        <div class="w-[400px] p-0 text-center text-white text-xl font-semibold bg-[#00FFFF] rounded-lg mb-1">
                             <button type='submit' className=' w-full h-full p-2 rounded-lg'>Log in</button >
                         </div>
                         <div className='text-red-600'>

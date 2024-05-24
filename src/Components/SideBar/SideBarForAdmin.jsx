@@ -1,6 +1,6 @@
 import React from 'react'
 import { RxDashboard } from "react-icons/rx";
-import logo from '../../img/logo.jpg'
+import logo from '../../assets/MuseverseMain.png'
 import { FaRegUser } from "react-icons/fa";
 import { TbReportAnalytics } from "react-icons/tb";
 import { NavLink, useNavigate } from 'react-router-dom';
