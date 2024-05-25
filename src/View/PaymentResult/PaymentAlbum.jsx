@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 import { getOrder } from '../../Utils/payOS';
 import Headers from '../Header/Header';
 import OrderTable from './OrderTable';
-import axios from 'axios';
 import axiosInstance from '../../API/axios';
 
 export default function PaymentAlbum() {
@@ -19,40 +18,40 @@ export default function PaymentAlbum() {
   } else {
     orderCode = paramsValue.get('orderCode');
   }
+
   useEffect(() => {
     if (orderCode === null) {
       setLoading(false);
-      return
+      return;
     }
 
-    ; (async () => {
+    (async () => {
       try {
-        const data = await getOrder(orderCode)
+        const data = await getOrder(orderCode);
         console.log(JSON.stringify(data, null, 2));
 
-        if (data.error == -1) {
+        if (data.error === -1) {
           alert('Không tìm thấy đơn hàng');
           setLoading(false);
-
-          return
+          return;
         }
 
-        if (data.error == 0) {
+        if (data.error === 0) {
           setOrder(data.data);
 
-          const item = localStorage.getItem('myItem')
-          console.log(item)
+          const item = localStorage.getItem('myItem');
+          console.log(item);
 
-          const response = await axiosInstance("/api/pay", {
+          const response = await axiosInstance('/api/pay', {
             method: 'POST',
-            data: item
+            data: item,
           });
           const result = response.data;
 
           if (result.hasOwnProperty('Error')) {
-            console.log('Error', result['Error'])
+            console.log('Error', result['Error']);
           } else {
-            console.log('messs', result)
+            console.log('messs', result);
             window.alert('Order successfully');
             localStorage.removeItem('myItem');
           }
@@ -63,8 +62,8 @@ export default function PaymentAlbum() {
       } finally {
         setLoading(false);
       }
-    })()
-  }, []);
+    })();
+  }, [orderCode]);
 
   return (
     <div>
